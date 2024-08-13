@@ -1,0 +1,230 @@
+
+
+/*Estilo Global*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h3.titulo{
+    color: white;
+    font-size: 38px;
+    text-align: center;
+}
+h3.titulo span{
+    color: #a8a4e7e3;
+}
+
+.flex{
+    display: flex;
+}
+
+body{
+    background-color: black;
+    height: 100vh;
+}
+
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+/*Estilizando a imagem*/
+img{
+    border-radius: 130px;
+    height: 190px;
+    border: 1px solid;
+}
+
+
+
+/*Estilo Header*/
+header{
+    padding: 40px 4%; /*Afasta o header do canto do body*/
+}
+/*Colando os elementos de dentro da classe pai um ao lado do outro*/
+header > .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/*Mudando a cor dos links*/
+header a{
+    color: #a8a4e7e3;
+    text-decoration: none;
+    font-size: 1.2rem;  
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: .5s;
+}
+
+header a:hover{
+    color:rgba(156, 240, 177, 0.555);
+    border-radius: 5px;
+    transform: scale(1.07);
+}
+
+header nav ul {
+    list-style-type: none;
+    
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+    
+}
+
+header .btn-contato button{
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    border: 0.9px solid;
+    cursor: pointer;
+    color: #a8a4e7e3;
+    background-color: transparent;
+    
+}
+
+header .btn-contato button:hover{
+    box-shadow: 2px 2px 15px #6f68c28a;
+}
+
+section.topo-site .flex{
+    align-items: center;
+    gap: 85px;
+}
+
+.img-topo-site img{  
+    border: 0 transparent;
+    height: 280px;
+    
+}
+.txt-topo-site p{
+    color: #bfbddb8a;
+    text-align: justify;
+  
+    letter-spacing: 0.9px;
+}
+
+.txt-topo-site h1{
+    color: #a8a4e7e3;
+    text-align: justify;
+    margin: 15px;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn-contato button{
+    color: #a8a4e7e3;
+    font-size: 18px;
+    padding: 10px;
+    margin: 15px;
+    font-weight: 700;
+    border-radius: 20px;
+    border: 0.9px solid;
+    background-color:#576a7e;
+    cursor: pointer;
+}
+.btn-contato button:hover{
+    box-shadow: 2px 2px 15px #6f68c28a;
+    transform: scale(1.02);
+    transition: .3s;
+}
+
+        /*Animando Imagens Em nosso projeto*/
+/*Bora Fazer mexer nossa foto ao lado do texto*/
+@keyframes flutuarFoto{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+/*Bora usar essa configuração acima em nossa imagem*/
+.topo-site .img-topo-site img{
+    position: relative;
+    animation: flutuarFoto 2s ease-in-out infinite alternate;
+}
+
+
+/*Animando as letras do H1*/
+.txt-topo-site span{
+    position: relative;
+}
+
+.txt-topo-site span:before{
+    content: "";
+    color: #a8a4e750;
+    animation: palavras 15s infinite;
+}
+
+.txt-topo-site span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid #a8a4e7e3;
+    right: -4px;
+    animation: piscarCursor .99s infinite, digitaEapaga 35s steps(35) infinite;
+    width: calc(100% + 5px);
+    background-color: black;
+}
+
+@keyframes digitaEapaga{
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+        width: calc(100% + 5px);
+    }
+}
+
+@keyframes piscarCursor{
+    0%{
+        border-left: 2px solid black;
+    }
+}
+
+@keyframes palavras{
+    0%,100%{
+        content: "Sejam bem-vindos(as).";
+    }
+}
+
+/*Estilo das softskills*/
+section.softskills{
+    padding: 40px 4%;
+}
+
+section.softskills .flex{
+    gap: 60px;
+}
+
+.softskills .softskills-box{
+    color: #bfbddb8a;
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 20px;
+    transition: .4s;
+}
+.softskills .softskills-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.219);
+}
+/*Estilizando os icons dentro da caixa de hard skills*/
+.softskills .softskills-box i{
+    font-size: 48px;
+    color: rgba(127, 255, 212, 0.658);
+   
+}
+.softskills .softskills-box h3{
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+
